@@ -25,7 +25,7 @@ img {
 .header {
   /* height: 100px;
   margin-bottom: 20px; */
-  /* background-color: #2b3743; */
+  background-color: #2b3743;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -34,7 +34,33 @@ img {
   display: grid;
   grid-template-columns: 1;
   gap: 40px;
-  box-shadow: 0 10px 10px rgba(32, 45, 54, 0.5);
+  /* box-shadow: 0 10px 10px rgba(5, 75, 125, 0.5); */
+}
+.filter {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0px;
+}
+
+.filter .form-control input {
+  background-color: #2b3743;
+  border:none;
+  outline: none;
+  padding: 8px;
+  border-radius: 5px;
+  color: #fff;
+  font-family: inherit;
+  letter-spacing: 0.5px;
+  width: 100%;
+}
+
+.filter .form-control {
+  width: 100%;
+}
+.filter .form-control input::placeholder {
+  color: #fff;
 }
 
 .grid article img {
