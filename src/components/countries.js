@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import { Link } from 'react-router-dom';
 const url = 'https://restcountries.com/v3.1/all';
 
 const Countries = () => {
@@ -11,8 +12,12 @@ const Countries = () => {
     useEffect(() => {
         fetchCountryData();
     }, [])
-    var windowWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
-    console.log("Current window width: " + windowWidth + " pixels");
+
+    const removeCountry = (numCode) => {
+        console.log(`numCode: `, numCode);
+        const newCountryList = countries.filter((country) => country.ccn3 !== numCode);
+        setCountries(newCountryList);
+    };
     return (
     <>
         <section className="grid">
@@ -35,6 +40,10 @@ const Countries = () => {
                         <h4>
                             Capital: <span>{capital}</span>
                         </h4>
+                        <div className='buttons'>
+                            <Link to={`/countries/${name}`} className='btn'>Learn more</Link>
+                            <button className='btn' onClick={() => removeCountry(ccn3)}>Remove Country</button>
+                        </div>
                     </div>
                 </div>
             </article>

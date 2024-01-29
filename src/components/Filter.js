@@ -6,7 +6,7 @@ const Filter = () => {
         <form className='form-control'>
             <input type="search" name="search" id="search" placeholder='Search for a country' />
         </form>
-        <div>
+        <div className='region-filter'>
             <select name="select" id="select" className="select">
                 <option value="Filter by region">Filter by region</option>
                 <option value="Africa">Africa</option>

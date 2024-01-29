@@ -1,13 +1,15 @@
 import React from "react";
-import Header from "./components/header";
-import Countries from "./components/countries";
-import Filter from "./components/Filter";
+import {BrowserRouter as Router, Route, Routes} from 'react-router-dom'
+import Country from "./components/Country";
+import Home from "./components/Home";
 function App() {
-  return ( <>
-    <Header />
-    <Filter />
-    <Countries />
-  </>);
+  return ( 
+  <Router>
+    <Routes>
+      <Route exact path="/" element={<Home />} > </Route>
+      <Route path="/countries/:name" element={<Country />} > </Route>
+    </Routes>
+  </Router>);
 }
 
 export default App;
