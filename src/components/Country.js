@@ -22,17 +22,18 @@ return (
            Back Home
        </Link>
        <section className="country">
-           {country.map((c) => {
+           {
+            country.map((c) => {
                   const {ccn3, name, population, 
                   region, subregion, capital,
                   flags, tld, currencies, languages} = c;
-                  {/* console.log(`name11: `, name.common); */}
+                  console.log(`name11: `, languages.fra);
                   return (
-                    <article className="details" key={ccn3}>
+                    <article key={ccn3}>
                       <div>
-                        {/* <img src={flags.png} alt={name.common}></img>
+                        <img src={flags.png} alt={name.common}></img>
                         <h5>{name.common}</h5>
-                        <h2>Native Name: <span>{name.common}</span></h2> */}
+                        <h2>Native Name: <span>{name.common}</span></h2>
                         <h2>Population: <span>{population}</span></h2>
                         <h2>Region: <span>{region}</span></h2>
                         <h2>Sub Region: <span>{subregion}</span></h2>
@@ -40,9 +41,9 @@ return (
                       </div>
                       <div>
                         <h2>Top Level Domain: <span>{tld}</span></h2>
-                        <h2>Currencies: <span>{currencies[0].name}</span></h2>
-                        <h2>Languages: <span>{languages[0].name}</span></h2>
-                    </div>
+                        {/* <h2>Currencies: <span>{currencies[0].EUR.name}</span></h2> */}
+                        {/* <h2>Languages: <span>{languages[0].name}</span></h2> */}
+                      </div>
                     </article>
                   )
                })
