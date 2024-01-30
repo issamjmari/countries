@@ -4,17 +4,16 @@ const url = 'https://restcountries.com/v3.1/all';
 
 const Countries = () => {
     const [countries, setCountries] = useState([]);
-    const fetchCountryData = async () => {
+    const fetchCountriesData = async () => {
         const response = await fetch(url);
         const countries = await response.json();
         setCountries(countries);
     }
     useEffect(() => {
-        fetchCountryData();
+        fetchCountriesData();
     }, [])
 
     const removeCountry = (numCode) => {
-        console.log(`numCode: `, numCode);
         const newCountryList = countries.filter((country) => country.ccn3 !== numCode);
         setCountries(newCountryList);
     };
@@ -41,7 +40,7 @@ const Countries = () => {
                             Capital: <span>{capital}</span>
                         </h4>
                         <div className='buttons'>
-                            <Link to={`/countries/${name}`} className='btn'>Learn more</Link>
+                            <Link className='btn' to={`/countries/${name.common}`}>Learn more</Link>
                             <button className='btn' onClick={() => removeCountry(ccn3)}>Remove Country</button>
                         </div>
                     </div>
