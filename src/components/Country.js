@@ -15,7 +15,7 @@ const Country = () => {
 }
   useEffect(() => {
       fetchCountryData();
-  }, [])
+  })
 
 return (
    <>

@@ -2,7 +2,6 @@ import React from 'react'
 
 const Header = () => {
   const changeTheme = () => {
-    const moon = document.querySelector('.fa-moon');
     const header = document.querySelector('.header');
     const input = document.querySelector('.filter .form-control input');
     const select = document.querySelector('.filter .region-filter .select');
