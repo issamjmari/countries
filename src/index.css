@@ -34,8 +34,14 @@ body {
 }
 
 .btn-light {
-  background-color: hsl(209, 24%, 68%);
+  background-color: hsl(209, 23%, 22%);
+  padding: 10px;
 }
+
+.fas.fa-arrow-left {
+  padding-right: 10px;
+}
+
 
 img {
   width: 100%;

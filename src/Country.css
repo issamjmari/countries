@@ -1,0 +1,57 @@
+.country {
+    padding: 50px;
+}
+
+.btn-light {
+    margin-bottom: 30px;
+    display: inline-block;
+}
+
+.country article .countryDetails div {
+    margin: 20px 0;
+}
+
+.country article .countryDetails div h2 {
+    font-size: 30px;
+    font-weight: 700;
+}
+
+.country article .countryDetails div h5 {
+    font-size: 18px;
+    font-weight: 600;
+    margin: 5px 0;
+}
+
+.country article .countryDetails div h5 span {
+    font-weight: 200;
+}
+
+.country article .borders .listItems ul {
+    list-style-type: none;
+}
+
+.country article .borders .listItems {
+    display: flex;
+    flex: wrap;
+}
+
+.country article .borders .listItems ul li {
+    background-color: hsl(209, 23%, 22%);
+    margin: 10px;
+    padding: 8px;
+}
+
+.tld ul {
+    list-style-type: none;
+}
+
+.tld {
+    display: flex;
+    flex: wrap;
+}
+
+.tld ul li  {
+    background-color: hsl(209, 23%, 22%);
+    margin: 10px;
+    padding: 4px 10px;
+}
