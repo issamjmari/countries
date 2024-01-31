@@ -20,7 +20,7 @@ const Country = () => {
 return (
    <>
        <section className="country">
-        <Link className='btn btn-light'>
+        <Link to='/' className='btn btn-light'>
            <i className='fas fa-arrow-left'></i>
            <span>Back</span>
        </Link>
