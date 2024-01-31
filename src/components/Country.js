@@ -22,7 +22,7 @@ return (
        <section className="country">
         <Link className='btn btn-light'>
            <i className='fas fa-arrow-left'></i>
-           Back Home
+           <span>Back</span>
        </Link>
            {
             country.map((c) => {
@@ -31,10 +31,10 @@ return (
                   flags, tld, currencies, languages} = c;
                   const languageValues = Object.values(languages);
                   const currencyValues = Object.values(currencies);
-                  console.log(tld);
+                  console.log(borders);
                   return (
                     <article key={ccn3}>
-                        <img src={flags.png} alt={name.common}></img>
+                        <img src={flags.png} alt={name.common} className='countryImage'></img>
                         <div className='countryDetails'>
                           <div>
                             <h2>{name.common}</h2>
@@ -63,7 +63,7 @@ return (
                         <div className='borders'>
                             <h3>Border Countries: </h3>
                             <div className='listItems'>
-                              {borders.map((border) => {
+                              {borders && borders.length && borders.map((border) => {
                                   return (
                                     <ul key={border}>
                                       <li>{border}</li>

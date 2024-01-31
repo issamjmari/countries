@@ -3,12 +3,20 @@
 }
 
 .btn-light {
+    padding: 10px 30px;
     margin-bottom: 30px;
     display: inline-block;
+    box-shadow: 0 5px 20px hsla(200, 15%, 8%, 0.5);
 }
 
+.btn-light span {
+    font-weight: 200;
+}
+
+
+
 .country article .countryDetails div {
-    margin: 20px 0;
+    margin: 20px 0px;
 }
 
 .country article .countryDetails div h2 {
@@ -35,10 +43,14 @@
     flex: wrap;
 }
 
+
+
 .country article .borders .listItems ul li {
     background-color: hsl(209, 23%, 22%);
     margin: 10px;
     padding: 8px;
+    border-radius: 3px;
+    box-shadow: 0 5px 20px hsla(200, 15%, 8%, 0.5);
 }
 
 .tld ul {
@@ -54,4 +66,6 @@
     background-color: hsl(209, 23%, 22%);
     margin: 10px;
     padding: 4px 10px;
+    border-radius: 3px;
+    box-shadow: 0 5px 20px hsla(200, 15%, 8%, 0.5);
 }

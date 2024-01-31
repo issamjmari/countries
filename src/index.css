@@ -38,6 +38,7 @@ body {
   padding: 10px;
 }
 
+
 .fas.fa-arrow-left {
   padding-right: 10px;
 }
@@ -105,6 +106,10 @@ img {
   color: #fff;
 }
 
+.filter .form-control input::placeholder.light-theme {
+  color: hsl(200, 15%, 8%);;
+}
+
 .grid article img {
   border-radius: 5px 5px 0px 0px;
 }
@@ -125,6 +130,22 @@ img {
 .grid .details h4 span {
   font-weight: 300;
 }
+
+body.light-theme {
+  background-color: hsla(0, 0%, 98%, 0.475);
+  color: hsl(200, 15%, 8%);
+}
+
+header.light-theme {
+  background-color: hsla(0, 0%, 98%, 0.711);
+  color: hsl(200, 15%, 8%);
+}
+
+.filter .region-filter .select.light-theme, .filter .form-control input.light-theme {
+  background-color: hsl(0, 0%, 98%);
+  color: hsl(200, 15%, 8%);
+}
+
 
 @media (min-width: 640px) {
   .grid {
@@ -164,5 +185,5 @@ img {
 
   .grid {
     grid-template-columns: repeat(4, 1fr);
-  } 
+  }
 }
