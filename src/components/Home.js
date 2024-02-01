@@ -6,7 +6,6 @@ import Countries from './countries'
 const Home = () => {
   return (
     <>
-        <Filter />
         <Countries />
     </>
   )

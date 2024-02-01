@@ -2,17 +2,40 @@ import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom';
 const url = 'https://restcountries.com/v3.1/all';
 
-const Countries = ({value}) => {
+let origCountries;
+
+const Countries = () => {
     const [countries, setCountries] = useState([]);
 
     const fetchCountriesData = async () => {
         const response = await fetch(url);
         const countries = await response.json();
+        origCountries = countries;
         setCountries(countries);
     }
     useEffect(() => {
         fetchCountriesData();
     }, [])
+
+    const handleChange = (e) => {
+        const value = e.target.value;
+        if(value === '') {
+            setCountries(origCountries);
+        }
+        else {
+            const FilteredCountries = countries.filter((country) => {
+              return country.name.common.toLowerCase().startsWith(value.toLowerCase());
+            });
+            setCountries(FilteredCountries);
+        }
+    }
+
+    // const handleKeyUp = (event) => {
+    //     if (event.key === 'Delete' || event.key === 'Backspace') {
+
+            
+    //     }
+    // };
 
     const removeCountry = (numCode) => {
         const newCountryList = countries.filter((country) => country.ccn3 !== numCode);
@@ -20,6 +43,17 @@ const Countries = ({value}) => {
     };
     return (
     <>
+        <section className="filter">
+            <form className='form-control'>
+                <input type="search" 
+                name="search" 
+                id="search" 
+                placeholder='Search for a country'
+                onChange={handleChange}
+                // onKeyUp={handleKeyUp} 
+                />
+            </form>
+        </section>
         <section className="grid">
             {countries.map((country) => {
             const {region, name, population, flags, capital, ccn3} = country;

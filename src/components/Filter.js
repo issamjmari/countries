@@ -9,13 +9,11 @@ const Filter = () => {
       const value = e.target.value;
       if(value === '') setCountryNumber(0);
       allcountries.forEach((name) => {
-        if(name.innerHTML.toLowerCase().startsWith(value.toLowerCase()))
+        const isInvisible = name.innerHTML.toLowerCase().startsWith(value.toLowerCase());
+        if(isInvisible)
         {
           matched++;
-          name.parentElement.parentElement.style.display = 'block';
         }
-        else
-          name.parentElement.parentElement.style.display = 'none';
 
       });
       setCountryNumber(matched);
