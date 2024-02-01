@@ -1,18 +1,24 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 const Filter = () => {
+  const [countryNumber, setCountryNumber] = useState(0);
 
   const handleChange = (e) => {
+      let matched = 0;
       const allcountries = document.querySelectorAll('.countryName');
       const value = e.target.value;
-      console.log(`value: `, value);
+      if(value === '') setCountryNumber(0);
       allcountries.forEach((name) => {
-        if(name.innerHTML.toLowerCase().includes(value.toLowerCase()))
+        if(name.innerHTML.toLowerCase().startsWith(value.toLowerCase()))
+        {
+          matched++;
           name.parentElement.parentElement.style.display = 'block';
+        }
         else
           name.parentElement.parentElement.style.display = 'none';
 
       });
+      setCountryNumber(matched);
   }
   return (
     <section className="filter">
@@ -22,17 +28,10 @@ const Filter = () => {
             id="search" 
             placeholder='Search for a country'
             onChange={handleChange} />
+            {countryNumber !== 0 && countryNumber !== 250  && 
+            <h5>{countryNumber} countries were found, please scroll down to see the rest</h5>}
+
         </form>
-        <div className='region-filter'>
-            <select name="select" id="select" className="select">
-                <option value="Filter by region">Filter by region</option>
-                <option value="Africa">Africa</option>
-                <option value="America">America</option>
-                <option value="Asia">Asia</option>
-                <option value="Europe">Europe</option>
-                <option value="Oceania">Oceania</option>
-            </select>
-        </div>
     </section>
   )
 }

@@ -2,8 +2,9 @@ import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom';
 const url = 'https://restcountries.com/v3.1/all';
 
-const Countries = () => {
+const Countries = ({value}) => {
     const [countries, setCountries] = useState([]);
+
     const fetchCountriesData = async () => {
         const response = await fetch(url);
         const countries = await response.json();

@@ -2,6 +2,11 @@
     padding: 50px;
 }
 
+.country article {
+    box-shadow: 0 5px 20px hsla(200, 15%, 8%, 0.5);
+    padding: 20px;
+}
+
 .btn-light {
     padding: 10px 30px;
     margin-bottom: 30px;
@@ -38,6 +43,14 @@
     list-style-type: none;
 }
 
+.country article .borders .listItems p {
+    background-color: hsl(209, 23%, 22%);
+    margin: 10px;
+    padding: 8px;
+    border-radius: 3px;
+    box-shadow: 0 5px 20px hsla(200, 15%, 8%, 0.5);
+}
+
 .country article .borders .listItems {
     display: flex;
     flex: wrap;
@@ -68,4 +81,10 @@
     padding: 4px 10px;
     border-radius: 3px;
     box-shadow: 0 5px 20px hsla(200, 15%, 8%, 0.5);
+}
+
+@media (min-width: 992px) {
+    .country article {
+        padding: 5% 20%;
+    }   
 }

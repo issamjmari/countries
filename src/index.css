@@ -102,7 +102,14 @@ img {
 
 .filter .form-control {
   width: 100%;
+  display: flex;
+  align-items: center;
 }
+
+.filter .form-control #search {
+  margin: 10px;
+}
+
 .filter .form-control input {
   color: #fff;
 }

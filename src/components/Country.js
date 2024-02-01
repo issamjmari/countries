@@ -31,7 +31,6 @@ return (
                   flags, tld, currencies, languages} = c;
                   const languageValues = Object.values(languages);
                   const currencyValues = Object.values(currencies);
-                  console.log(borders);
                   return (
                     <article key={ccn3}>
                         <img src={flags.png} alt={name.common} className='countryImage'></img>
@@ -63,13 +62,15 @@ return (
                         <div className='borders'>
                             <h3>Border Countries: </h3>
                             <div className='listItems'>
-                              {borders && borders.length && borders.map((border) => {
-                                  return (
+                              {
+                                borders && borders.length ?
+                                  borders.map((border) => (
                                     <ul key={border}>
                                       <li>{border}</li>
                                     </ul>
-                                  )
-                              })}
+                                  )) :
+                                  <p>No border countries available</p>
+                              }
                             </div>
                         </div>
                     </article>
