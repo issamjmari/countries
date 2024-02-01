@@ -10,7 +10,6 @@ const Country = () => {
   const fetchCountryData = async () => {
     const response = await fetch(`https://restcountries.com/v3.1/name/${countryName}`)
     const country = await response.json()
-    console.log(country);
     setCountry(country)
 }
   useEffect(() => {

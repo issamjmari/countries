@@ -23,24 +23,28 @@ const Countries = () => {
             setCountries(origCountries);
         }
         else {
-            const FilteredCountries = countries.filter((country) => {
-              return country.name.common.toLowerCase().startsWith(value.toLowerCase());
+            const FilteredCountries = origCountries.filter((country) => {
+                return country.name.common.toLowerCase().startsWith(value.toLowerCase());
             });
             setCountries(FilteredCountries);
         }
     }
 
-    // const handleKeyUp = (event) => {
-    //     if (event.key === 'Delete' || event.key === 'Backspace') {
-
-            
-    //     }
-    // };
-
-    const removeCountry = (numCode) => {
-        const newCountryList = countries.filter((country) => country.ccn3 !== numCode);
-        setCountries(newCountryList);
+    const handleKeyUp = (event) => {
+        const value = event.target.value;
+        if (event.key === 'Backspace' || event.key === 'Delete') {
+            if(value === '') {
+                setCountries(origCountries);
+            }
+            else {
+                const FilteredCountries = origCountries.filter((country) => {
+                  return country.name.common.toLowerCase().startsWith(value.toLowerCase());
+                });
+                setCountries(FilteredCountries);
+            }
+        }
     };
+
     return (
     <>
         <section className="filter">
@@ -50,7 +54,7 @@ const Countries = () => {
                 id="search" 
                 placeholder='Search for a country'
                 onChange={handleChange}
-                // onKeyUp={handleKeyUp} 
+                onKeyUp={handleKeyUp} 
                 />
             </form>
         </section>
@@ -76,7 +80,6 @@ const Countries = () => {
                         </h4>
                         <div className='buttons'>
                             <Link className='btn' to={`/countries/${name.common}`}>Learn more</Link>
-                            <button className='btn' onClick={() => removeCountry(ccn3)}>Remove Country</button>
                         </div>
                     </div>
                 </div>
