@@ -63,11 +63,12 @@ return (
                             <div className='listItems'>
                               {
                                 borders && borders.length ?
-                                  borders.map((border) => (
-                                    <ul key={border}>
+                                  borders.map((border) => {
+                                    if(border === 'ISR') return <></>;
+                                    return <ul key={border}>
                                       <li>{border}</li>
                                     </ul>
-                                  )) :
+                              }) :
                                   <p>No border countries available</p>
                               }
                             </div>

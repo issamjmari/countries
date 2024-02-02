@@ -60,6 +60,8 @@ const Countries = () => {
         </section>
         <section className="grid">
             {countries.map((country) => {
+                if(country.name.common === 'Israel')
+                    return <></>;
             const {region, name, population, flags, capital, ccn3} = country;
             return (
                 <article key={ccn3}>
